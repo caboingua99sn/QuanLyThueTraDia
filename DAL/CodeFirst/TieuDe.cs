@@ -13,6 +13,7 @@ namespace DAL.CodeFirst
         public int id_TieuDe { get; set; }
         public string tenTieuDe { get; set; }
         //Khoa ngoai
-        public int id_TheLoai { get; set; }
+        public virtual int id_TheLoai { get; set; }
+        public virtual ICollection<DVD> dvds { get; set; }
     }
 }

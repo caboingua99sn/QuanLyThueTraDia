@@ -11,21 +11,22 @@ namespace DAL.CodeFirst
     public class PhieuDatTruoc
     {
         [Key]
-        [Column(Order = 1)]
         public int id_PhieuDatTruoc { get; set; }
         public DateTime ngayDatTruoc { get; set; }
 
         //foreign key
-        [Key]
-        [Column(Order = 2)]
+       
+        [Column(Order = 1)]
         public int id_KhachHang { get; set; }
         public virtual KhachHang khachhang { get; set; }
 
-        [Column(Order = 3)]
+       
+        [Column(Order = 2)]
         public int id_TieuDe;
         public virtual TieuDe tieude { get; set; }
 
-        [Column(Order = 4)]
+       
+        [Column(Order = 3)]
         public int? id_DVD { get; set; }
         public virtual DVD dvd { get; set; }
     }

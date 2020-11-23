@@ -14,6 +14,6 @@ namespace DAL.CodeFirst
         public int trangThai { get; set; }
 
         //foreign key
-        public int id_TieuDe { get; set; }
+        public virtual int id_TieuDe { get; set; }
     }
 }
