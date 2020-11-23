@@ -15,5 +15,6 @@ namespace DAL.CodeFirst
         //Khoa ngoai
         public virtual int id_TheLoai { get; set; }
         public virtual ICollection<PhieuDatTruoc> phieudattruocs { get; set; }
+        public virtual ICollection<DVD> dvds { get; set; }
     }
 }
