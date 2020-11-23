@@ -17,17 +17,14 @@ namespace DAL.CodeFirst
         //foreign key
        
         [Column(Order = 1)]
-        public int id_KhachHang { get; set; }
-        public virtual KhachHang khachhang { get; set; }
+        public virtual int id_KhachHang { get; set; }
 
        
         [Column(Order = 2)]
-        public int id_TieuDe;
-        public virtual TieuDe tieude { get; set; }
+        public virtual int id_TieuDe { get; set; }
 
-       
+
         [Column(Order = 3)]
-        public int? id_DVD { get; set; }
-        public virtual DVD dvd { get; set; }
+        public virtual int? id_DVD { get; set; }
     }
 }

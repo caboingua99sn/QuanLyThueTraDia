@@ -8,25 +8,23 @@ using System.Threading.Tasks;
 
 namespace DAL.CodeFirst
 {
-   public class PhieuThue
+   public class PhieuThueTra
     {
         [Key]
         public int id_PhieuThue { get; set; }
         public DateTime ngayThue { get; set; }
-        public DateTime ngayTra { get; set; }
+        public DateTime? ngayTra { get; set; }
         public bool tinhTrang { get; set; }
-        public double phiTreHan { get; set; }
+        public double? phiTreHan { get; set; }
 
         //foreign key
 
-         [Column(Order = 1)]
-        public int id_KhachHang;
-        public virtual KhachHang khachhang { get; set; }
+        [Column(Order = 1)]
+        public virtual int id_KhachHang { get; set; }
 
-      
+
         [Column(Order = 2)]
-        public int id_DVD;
-        public virtual DVD dvd { get; set; }
+        public virtual int id_DVD { get; set; }
 
     }
 }

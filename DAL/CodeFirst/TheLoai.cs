@@ -14,7 +14,6 @@ namespace DAL.CodeFirst
         public string tenTheLoai { get; set; }
         public double giaThue { get; set; }
         public int thoiGianThue { get; set; }
-
         public virtual ICollection<TieuDe> tieudes { get; set; }
 
     }

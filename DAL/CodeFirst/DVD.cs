@@ -15,5 +15,8 @@ namespace DAL.CodeFirst
 
         //foreign key
         public virtual int id_TieuDe { get; set; }
+
+        public virtual ICollection<PhieuDatTruoc> phieudattruocs { get; set; }
+        public virtual ICollection<PhieuThueTra> phieuthues { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace DAL
         public DbSet<KhachHang> khachhangs { get; set; }
         public DbSet<DVD> dvds { get; set; }
         public DbSet<PhieuDatTruoc> phieudattruocs { get; set; }
-        public DbSet<PhieuThue> phieuthues { get; set; }
+        public DbSet<PhieuThueTra> phieuthuetras { get; set; }
         public DbSet<TheLoai> theloais { get; set; }
         public DbSet<TieuDe> tieudes { get; set; }
 

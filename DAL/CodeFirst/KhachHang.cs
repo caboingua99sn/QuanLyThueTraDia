@@ -14,8 +14,7 @@ namespace DAL.CodeFirst
         public string tenKhachHang { get; set; }
         public string soCMND { get; set; }
         public string soDT { get; set; }
-
-        public virtual ICollection<PhieuThue> phieuthues { get; set; }
         public virtual ICollection<PhieuDatTruoc> phieudattruocs { get; set; }
+        public virtual ICollection<PhieuThueTra> phieuthues { get; set; }
     }
 }

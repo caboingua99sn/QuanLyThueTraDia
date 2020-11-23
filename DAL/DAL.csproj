@@ -58,13 +58,13 @@
     <Compile Include="CodeFirst\DVD.cs" />
     <Compile Include="CodeFirst\KhachHang.cs" />
     <Compile Include="CodeFirst\PhieuDatTruoc.cs" />
-    <Compile Include="CodeFirst\PhieuThue.cs" />
+    <Compile Include="CodeFirst\PhieuThueTra.cs" />
     <Compile Include="CodeFirst\TheLoai.cs" />
     <Compile Include="CodeFirst\TieuDe.cs" />
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202011231533265_dbQuanLyThueTraDia.cs" />
-    <Compile Include="Migrations\202011231533265_dbQuanLyThueTraDia.designer.cs">
-      <DependentUpon>202011231533265_dbQuanLyThueTraDia.cs</DependentUpon>
+    <Compile Include="Migrations\202011231630430_v1.cs" />
+    <Compile Include="Migrations\202011231630430_v1.designer.cs">
+      <DependentUpon>202011231630430_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +77,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011231533265_dbQuanLyThueTraDia.resx">
-      <DependentUpon>202011231533265_dbQuanLyThueTraDia.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011231630430_v1.resx">
+      <DependentUpon>202011231630430_v1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

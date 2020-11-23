@@ -14,6 +14,6 @@ namespace DAL.CodeFirst
         public string tenTieuDe { get; set; }
         //Khoa ngoai
         public virtual int id_TheLoai { get; set; }
-        public virtual ICollection<DVD> dvds { get; set; }
+        public virtual ICollection<PhieuDatTruoc> phieudattruocs { get; set; }
     }
 }
