@@ -1,0 +1,13 @@
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\bin\Debug\DAL.dll.config
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\bin\Debug\DAL.dll
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\bin\Debug\DAL.pdb
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\obj\Debug\DAL.dll
+C:\Users\Admin\Downloads\XayDungPhanMem\DAL\obj\Debug\DAL.pdb
