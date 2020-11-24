@@ -11,7 +11,6 @@ namespace Entity
         public int id_PhieuThue { get; set; }
         public DateTime ngayThue { get; set; }
         public DateTime? ngayTra { get; set; }
-        public bool tinhTrang { get; set; }
         public double? phiTreHan { get; set; }
         public virtual int id_KhachHang { get; set; }
         public virtual int id_DVD { get; set; }

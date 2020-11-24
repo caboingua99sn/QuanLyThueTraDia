@@ -14,7 +14,6 @@ namespace DAL.CodeFirst
         public int id_PhieuThue { get; set; }
         public DateTime ngayThue { get; set; }
         public DateTime? ngayTra { get; set; }
-        public bool tinhTrang { get; set; }
         public double? phiTreHan { get; set; }
 
         //foreign key
