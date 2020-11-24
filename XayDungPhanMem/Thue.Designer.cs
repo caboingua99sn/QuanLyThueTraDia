@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_ttphitre = new System.Windows.Forms.Button();
             this.txt_phino = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_sdt = new System.Windows.Forms.TextBox();
-            this.txt_dc = new System.Windows.Forms.TextBox();
+            this.txt_cmnd = new System.Windows.Forms.TextBox();
             this.txt_ten = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btn_tkDia = new System.Windows.Forms.Button();
             this.txt_IDDia = new System.Windows.Forms.TextBox();
-            this.btn_ttphitre = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -65,7 +65,7 @@
             this.groupBox1.Controls.Add(this.txt_phino);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_sdt);
-            this.groupBox1.Controls.Add(this.txt_dc);
+            this.groupBox1.Controls.Add(this.txt_cmnd);
             this.groupBox1.Controls.Add(this.txt_ten);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -77,6 +77,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
+            // 
+            // btn_ttphitre
+            // 
+            this.btn_ttphitre.Location = new System.Drawing.Point(6, 170);
+            this.btn_ttphitre.Name = "btn_ttphitre";
+            this.btn_ttphitre.Size = new System.Drawing.Size(275, 29);
+            this.btn_ttphitre.TabIndex = 14;
+            this.btn_ttphitre.Text = "Thanh Toán Phí";
+            this.btn_ttphitre.UseVisualStyleBackColor = true;
             // 
             // txt_phino
             // 
@@ -104,13 +113,13 @@
             this.txt_sdt.Size = new System.Drawing.Size(199, 22);
             this.txt_sdt.TabIndex = 10;
             // 
-            // txt_dc
+            // txt_cmnd
             // 
-            this.txt_dc.Location = new System.Drawing.Point(82, 67);
-            this.txt_dc.Name = "txt_dc";
-            this.txt_dc.ReadOnly = true;
-            this.txt_dc.Size = new System.Drawing.Size(199, 22);
-            this.txt_dc.TabIndex = 9;
+            this.txt_cmnd.Location = new System.Drawing.Point(82, 67);
+            this.txt_cmnd.Name = "txt_cmnd";
+            this.txt_cmnd.ReadOnly = true;
+            this.txt_cmnd.Size = new System.Drawing.Size(199, 22);
+            this.txt_cmnd.TabIndex = 9;
             // 
             // txt_ten
             // 
@@ -136,9 +145,9 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 15);
+            this.label2.Size = new System.Drawing.Size(45, 15);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Địa Chỉ";
+            this.label2.Text = "CMND";
             // 
             // label1
             // 
@@ -298,20 +307,11 @@
             this.txt_IDDia.Size = new System.Drawing.Size(199, 22);
             this.txt_IDDia.TabIndex = 15;
             // 
-            // btn_ttphitre
-            // 
-            this.btn_ttphitre.Location = new System.Drawing.Point(6, 170);
-            this.btn_ttphitre.Name = "btn_ttphitre";
-            this.btn_ttphitre.Size = new System.Drawing.Size(275, 29);
-            this.btn_ttphitre.TabIndex = 14;
-            this.btn_ttphitre.Text = "Thanh Toán Phí";
-            this.btn_ttphitre.UseVisualStyleBackColor = true;
-            // 
             // Thue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 325);
+            this.ClientSize = new System.Drawing.Size(795, 328);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -332,7 +332,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_sdt;
-        private System.Windows.Forms.TextBox txt_dc;
+        private System.Windows.Forms.TextBox txt_cmnd;
         private System.Windows.Forms.TextBox txt_ten;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

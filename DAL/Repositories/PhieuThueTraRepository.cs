@@ -5,36 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.CodeFirst;
 
-namespace DAL.Repositories
+namespace DAL
 {
-    public class KhachHangRepository : IDisposable
+    public class PhieuThueTraRepository
     {
         private DataContext context = new DataContext();
 
         private bool disposedValue = false; // To detect redundant calls
 
-        public List<KhachHang> getKhachHangs()
+        public List<PhieuThueTra> getPhieuThueTraByKH(int idKH)
         {
-            var list = context.khachhangs.ToList();
-            return context.khachhangs.ToList();
-        }
-        
-        public int Save(KhachHang p)
-        {
-            context.khachhangs.Add(p);
-            return context.SaveChanges();
+             return context.phieuthuetras.Where(x => x.id_KhachHang == idKH && x.ngayTra == null).ToList();
         }
 
-        public int Update(int idsua)
+        public int AddPhieuThue(int id_dvd, int id_kh)
         {
-            var p = new KhachHang();
-            p = context.khachhangs.First(x => x.id_KhachHang==(idsua));
+            PhieuThueTra p = new PhieuThueTra();
+            p.id_DVD = id_dvd;
+            p.id_KhachHang = id_kh;
+            p.ngayThue = DateTime.Now;
+            p.phiTreHan = 0;
+            context.phieuthuetras.Add(p);
             return context.SaveChanges();
-        }
-
-        public KhachHang Find(int id)
-        {
-            return context.khachhangs.Where(p => p.id_KhachHang == id).FirstOrDefault();
         }
 
         protected virtual void Dispose(bool disposing)

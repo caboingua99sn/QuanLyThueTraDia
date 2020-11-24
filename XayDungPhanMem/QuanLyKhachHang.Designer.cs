@@ -32,7 +32,6 @@
             this.dgv_dskh = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_sua = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.btn_timkiem = new System.Windows.Forms.Button();
             this.txt_idkh = new System.Windows.Forms.TextBox();
@@ -40,7 +39,7 @@
             this.txt_phino = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_sdt = new System.Windows.Forms.TextBox();
-            this.txt_dc = new System.Windows.Forms.TextBox();
+            this.txt_cmnd = new System.Windows.Forms.TextBox();
             this.txt_tenkh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,13 +69,14 @@
             this.dgv_dskh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dskh.Location = new System.Drawing.Point(6, 21);
             this.dgv_dskh.Name = "dgv_dskh";
+            this.dgv_dskh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_dskh.Size = new System.Drawing.Size(263, 360);
             this.dgv_dskh.TabIndex = 1;
+            this.dgv_dskh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dskh_CellClick);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_sua);
-            this.groupBox2.Controls.Add(this.btn_Xoa);
             this.groupBox2.Controls.Add(this.btn_them);
             this.groupBox2.Controls.Add(this.btn_timkiem);
             this.groupBox2.Controls.Add(this.txt_idkh);
@@ -84,7 +84,7 @@
             this.groupBox2.Controls.Add(this.txt_phino);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txt_sdt);
-            this.groupBox2.Controls.Add(this.txt_dc);
+            this.groupBox2.Controls.Add(this.txt_cmnd);
             this.groupBox2.Controls.Add(this.txt_tenkh);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -99,21 +99,13 @@
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(303, 130);
+            this.btn_sua.Location = new System.Drawing.Point(303, 94);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(75, 23);
             this.btn_sua.TabIndex = 18;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.UseVisualStyleBackColor = true;
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.Location = new System.Drawing.Point(303, 96);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(75, 23);
-            this.btn_Xoa.TabIndex = 17;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_them
             // 
@@ -123,6 +115,7 @@
             this.btn_them.TabIndex = 16;
             this.btn_them.Text = "Thêm";
             this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_timkiem
             // 
@@ -173,23 +166,20 @@
             // 
             this.txt_sdt.Location = new System.Drawing.Point(82, 128);
             this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.ReadOnly = true;
             this.txt_sdt.Size = new System.Drawing.Size(199, 22);
             this.txt_sdt.TabIndex = 10;
             // 
-            // txt_dc
+            // txt_cmnd
             // 
-            this.txt_dc.Location = new System.Drawing.Point(82, 95);
-            this.txt_dc.Name = "txt_dc";
-            this.txt_dc.ReadOnly = true;
-            this.txt_dc.Size = new System.Drawing.Size(199, 22);
-            this.txt_dc.TabIndex = 9;
+            this.txt_cmnd.Location = new System.Drawing.Point(82, 95);
+            this.txt_cmnd.Name = "txt_cmnd";
+            this.txt_cmnd.Size = new System.Drawing.Size(199, 22);
+            this.txt_cmnd.TabIndex = 9;
             // 
             // txt_tenkh
             // 
             this.txt_tenkh.Location = new System.Drawing.Point(82, 62);
             this.txt_tenkh.Name = "txt_tenkh";
-            this.txt_tenkh.ReadOnly = true;
             this.txt_tenkh.Size = new System.Drawing.Size(199, 22);
             this.txt_tenkh.TabIndex = 6;
             // 
@@ -209,9 +199,9 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 15);
+            this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Địa Chỉ";
+            this.label2.Text = "Số CMND:";
             // 
             // label1
             // 
@@ -232,7 +222,7 @@
             this.groupBox3.Size = new System.Drawing.Size(387, 188);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Đĩa đã thuê";
+            this.groupBox3.Text = "Đĩa đang thuê";
             // 
             // dgv_dsdiathue
             // 
@@ -252,6 +242,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "QuanLyKhachHang";
             this.Text = "QuanLyKhachHang";
+            this.Load += new System.EventHandler(this.QuanLyKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dskh)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -273,7 +264,7 @@
         private System.Windows.Forms.TextBox txt_phino;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_sdt;
-        private System.Windows.Forms.TextBox txt_dc;
+        private System.Windows.Forms.TextBox txt_cmnd;
         private System.Windows.Forms.TextBox txt_tenkh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -281,7 +272,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgv_dsdiathue;
         private System.Windows.Forms.Button btn_sua;
-        private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_them;
     }
 }

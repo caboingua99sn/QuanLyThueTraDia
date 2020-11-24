@@ -46,7 +46,6 @@ D:\QuanLyThueTraDia\DAL\bin\Debug\DAL.dll
 D:\QuanLyThueTraDia\DAL\bin\Debug\DAL.pdb
 D:\QuanLyThueTraDia\DAL\bin\Debug\EntityFramework.dll
 D:\QuanLyThueTraDia\DAL\bin\Debug\EntityFramework.SqlServer.dll
-D:\QuanLyThueTraDia\DAL\bin\Debug\System.ComponentModel.Annotations.dll
 D:\QuanLyThueTraDia\DAL\bin\Debug\EntityFramework.xml
 D:\QuanLyThueTraDia\DAL\bin\Debug\EntityFramework.SqlServer.xml
 D:\QuanLyThueTraDia\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
@@ -56,3 +55,6 @@ D:\QuanLyThueTraDia\DAL\obj\Debug\DAL.dll
 D:\QuanLyThueTraDia\DAL\obj\Debug\DAL.pdb
 D:\QuanLyThueTraDia\DAL\obj\Debug\DAL.Migrations.v1.resources
 D:\QuanLyThueTraDia\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+D:\QuanLyThueTraDia\DAL\bin\Debug\Entity.dll
+D:\QuanLyThueTraDia\DAL\bin\Debug\Entity.pdb
+D:\QuanLyThueTraDia\DAL\bin\Debug\Entity.dll.config

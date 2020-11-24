@@ -24,9 +24,7 @@ D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\XayDungPhanMem.exe.config
 D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\XayDungPhanMem.exe
 D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\XayDungPhanMem.pdb
 D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\EntityFramework.dll
-D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\EntityFramework.SqlServer.dll
 D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\EntityFramework.xml
-D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\EntityFramework.SqlServer.xml
 D:\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.csprojAssemblyReference.cache
 D:\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.BaoCaoKhachHang.resources
 D:\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.DangKyTV.resources
@@ -42,3 +40,14 @@ D:\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.csproj.CoreCompileIn
 D:\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.csproj.CopyComplete
 D:\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.exe
 D:\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.pdb
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\BULL.dll
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\Entity.dll
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\DAL.dll
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\BULL.pdb
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\BULL.dll.config
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\Entity.pdb
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\Entity.dll.config
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\DAL.pdb
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\DAL.dll.config
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\EntityFramework.SqlServer.dll
+D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\EntityFramework.SqlServer.xml

@@ -30,6 +30,7 @@ namespace BULL
             }
             return list;
         }
+
         public int Save(eKhachHang p)
         {
             KhachHang item = new KhachHang();
@@ -40,12 +41,29 @@ namespace BULL
             khdal.Save(item);
             return 1;
         }
-        public int Delete(string idxoa)
+
+        public int UpdateKhachHang(eKhachHang kh)
         {
-            khdal.Delete(idxoa);
+            KhachHang temp = khdal.Find(kh.id_KhachHang);
+            temp.tenKhachHang = kh.tenKhachHang;
+            temp.soCMND = kh.soCMND;
+            temp.soDT = kh.soDT;
+            khdal.Update(temp.id_KhachHang);
             return 1;
+        }
 
-
+        public eKhachHang GetKhachHangByID(int idkh)
+        {
+            eKhachHang kh = new eKhachHang();
+            KhachHang temp = khdal.Find(idkh);
+            if (temp != null)
+            {
+                kh.tenKhachHang = temp.tenKhachHang;
+                kh.soCMND = temp.soCMND;
+                kh.soDT = temp.soDT;
+                return kh;
+            }
+            return null;
         }
     }
 }

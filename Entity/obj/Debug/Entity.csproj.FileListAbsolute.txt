@@ -5,8 +5,8 @@ D:\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.dll
 D:\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.SqlServer.dll
 D:\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.xml
 D:\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.SqlServer.xml
-D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
 D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CopyComplete
 D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.dll
 D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.pdb
+D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
