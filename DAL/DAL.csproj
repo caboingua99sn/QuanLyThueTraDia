@@ -62,12 +62,13 @@
     <Compile Include="CodeFirst\TheLoai.cs" />
     <Compile Include="CodeFirst\TieuDe.cs" />
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202011231648293_v1.cs" />
-    <Compile Include="Migrations\202011231648293_v1.designer.cs">
-      <DependentUpon>202011231648293_v1.cs</DependentUpon>
+    <Compile Include="Migrations\202011240401344_v1.cs" />
+    <Compile Include="Migrations\202011240401344_v1.designer.cs">
+      <DependentUpon>202011240401344_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\KhachHangRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -77,8 +78,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011231648293_v1.resx">
-      <DependentUpon>202011231648293_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011240401344_v1.resx">
+      <DependentUpon>202011240401344_v1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
