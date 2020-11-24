@@ -1,6 +1,6 @@
 ﻿namespace XayDungPhanMem
 {
-    partial class Thue
+    partial class frmThue
     {
         /// <summary>
         /// Required designer variable.
@@ -307,7 +307,7 @@
             this.txt_IDDia.Size = new System.Drawing.Size(199, 22);
             this.txt_IDDia.TabIndex = 15;
             // 
-            // Thue
+            // frmThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -315,8 +315,8 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Thue";
-            this.Text = "Thue";
+            this.Name = "frmThue";
+            this.Text = "Thuê";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -12,13 +12,13 @@ using Entity;
 
 namespace XayDungPhanMem
 {
-    public partial class Thue : Form
+    public partial class frmThue : Form
     {
         PhiTreHenBUL treHenbul = new PhiTreHenBUL();
         KhachHangBUL khbul = new KhachHangBUL();
         const double PHI_TRE_HEN = 0.1;
 
-        public Thue()
+        public frmThue()
         {
             InitializeComponent();
         }
@@ -35,7 +35,6 @@ namespace XayDungPhanMem
             {
                 return;
             }
-            else
                 //L
             //Dialog thông báo còn đĩa chưa trả nếu khách muốn trả thì qua form trả nếu không tiếp tục thuê đĩa
         }

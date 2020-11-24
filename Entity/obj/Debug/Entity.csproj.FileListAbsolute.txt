@@ -10,3 +10,15 @@ D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CopyComplete
 D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.dll
 D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.pdb
 D:\QuanLyThueTraDia\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\bin\Debug\Entity.dll.config
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\bin\Debug\Entity.dll
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\bin\Debug\Entity.pdb
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.dll
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.xml
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CopyComplete
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.dll
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.pdb

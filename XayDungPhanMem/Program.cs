@@ -16,7 +16,7 @@ namespace XayDungPhanMem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Thue());
+            Application.Run(new frmThue());
         }
     }
 }
