@@ -69,6 +69,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\KhachHangRepository.cs" />
     <Compile Include="Repositories\PhiTreHenRepository.cs" />
+    <Compile Include="Repositories\TheLoaiRepository.cs" />
+    <Compile Include="Repositories\TieuDeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

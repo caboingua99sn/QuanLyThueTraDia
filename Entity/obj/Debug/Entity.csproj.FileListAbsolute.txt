@@ -22,3 +22,15 @@ C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CoreCo
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CopyComplete
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.dll
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\Entity\obj\Debug\Entity.pdb
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\bin\Debug\Entity.dll.config
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\bin\Debug\Entity.dll
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\bin\Debug\Entity.pdb
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.dll
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.xml
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\obj\Debug\Entity.csproj.CopyComplete
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\obj\Debug\Entity.dll
+C:\Users\84935\Desktop\C#\XDPM\QuanLyThueTraDia\Entity\obj\Debug\Entity.pdb
