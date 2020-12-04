@@ -54,10 +54,8 @@ D:\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.csprojAssemblyReference.cache
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.BaoCaoKhachHang.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.DangKyTV.resources
-C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.DatTruoc.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.Home.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.Properties.Resources.resources
-C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.QuanLyDia.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.QuanLyKhachHang.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.TraDia.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.csproj.GenerateResource.cache
@@ -82,3 +80,8 @@ C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\DAL.pdb
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\bin\Debug\DAL.dll.config
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.csproj.CopyComplete
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.frmThue.resources
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.QuanLyTieuDe.resources
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.frmDatTruoc.resources
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.frmQuanlydia.resources
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.ThemDVD.resources
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.ChiTietTreHan.resources

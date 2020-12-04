@@ -40,8 +40,8 @@ namespace XayDungPhanMem
             //set kích thước cột
             dgv.Columns["id_KhachHang"].Width = 50;
             dgv.Columns["tenKhachHang"].Width = 100;
-            dgv.Columns["soDT"].Width = 100;
-            dgv.Columns["soCMND"].Width =100;
+            dgv.Columns["soDT"].Width = 110;
+            dgv.Columns["soCMND"].Width =110;
             //set thứ tự cột
             dgv.Columns["id_KhachHang"].DisplayIndex = 0;
             dgv.Columns["tenKhachHang"].DisplayIndex = 1;
@@ -69,12 +69,11 @@ namespace XayDungPhanMem
             try
             {
                 eKhachHang ekh = new eKhachHang();
-                ekh.id_KhachHang = Convert.ToInt32(txt_idkh.Text.Trim());
                 ekh.tenKhachHang = txt_tenkh.Text.Trim();
                 ekh.soCMND = txt_cmnd.Text.Trim();
                 ekh.soDT = txt_sdt.Text.Trim();
                 khbul.Save(ekh);
-                MessageBox.Show("Thêm phiếu khám thành công");
+                MessageBox.Show("Thêm khách hàng thành công");
                 loadDataGridView(dgv_dskh);
             }
             catch (Exception ex)

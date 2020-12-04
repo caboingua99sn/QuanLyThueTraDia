@@ -33,9 +33,9 @@ namespace BULL
             return list;
         }
 
-        public int AddPhieuThue(int id_dvd, int id_kh)
+        public int AddPhieuThue(int id_dvd, int id_kh, DateTime now)
         {
-            return phieuThuTraDal.AddPhieuThue(id_dvd, id_kh);
+            return phieuThuTraDal.AddPhieuThue(id_dvd, id_kh, now);
         }
     }
 }

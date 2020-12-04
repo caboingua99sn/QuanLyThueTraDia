@@ -12,23 +12,9 @@ namespace DAL.Repositories
         private DataContext context = new DataContext();
         private bool disposedValue = false;
 
-        public double totatlPhiTreHen(int id_KH, double phi_tre_hen)
-        {
-            double total = 0;
-            var lst = context.phieuthuetras.Where(x => x.id_KhachHang == id_KH && x.phiTreHan != 0).ToList();
-            foreach (var item in lst)
-            {
-                DVD dvd = context.dvds.Where(x => x.id_DVD == item.id_DVD).FirstOrDefault();
-                TieuDe tieu_de = context.tieudes.Where(x => x.id_TieuDe == dvd.id_TieuDe).FirstOrDefault();
-                TheLoai the_loai = context.theloais.Where(x => x.id_TheLoai == tieu_de.id_TheLoai).FirstOrDefault();
-                total += the_loai.giaThue * phi_tre_hen;
-            }
-            return total;
-        }
-
         public List<PhieuThueTra> getListPhiTreHen(int id_KH)
         {
-            return context.phieuthuetras.Where(x => x.id_KhachHang == id_KH && x.phiTreHan != 0).ToList();
+            return context.phieuthuetras.Where(x => x.id_KhachHang == id_KH && (x.phiTreHan != 0 && x.phiTreHan != null)).ToList();
         }
 
         public int ThemPhiTreHen(int id_DVD, double phi_tre_hen)
@@ -44,11 +30,12 @@ namespace DAL.Repositories
             return 1;
         }
 
-        public int ThanhToanPhiTreHen(int id_KH, int id_DVD)
+        public int ThanhToanPhiTreHen(int id_KH, int id_DVD, DateTime now)
         {
             PhieuThueTra phieu = context.phieuthuetras.Where(x => x.id_KhachHang == id_KH && x.id_DVD == id_DVD
                     && x.phiTreHan != 0).FirstOrDefault();
             phieu.phiTreHan = 0;
+            phieu.ngayTraPhiTreHen = now;
             context.SaveChanges();
             return 1;
         }

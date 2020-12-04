@@ -46,6 +46,7 @@
                         id_PhieuThue = c.Int(nullable: false, identity: true),
                         ngayThue = c.DateTime(nullable: false),
                         ngayTra = c.DateTime(),
+                        ngayTraPhiTreHen = c.DateTime(),
                         phiTreHan = c.Double(),
                     })
                 .PrimaryKey(t => t.id_PhieuThue)

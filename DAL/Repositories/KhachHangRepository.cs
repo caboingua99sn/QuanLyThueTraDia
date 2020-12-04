@@ -15,13 +15,20 @@ namespace DAL.Repositories
 
         public List<KhachHang> getKhachHangs()
         {
-            var list = context.khachhangs.ToList();
             return context.khachhangs.ToList();
         }
         
         public int Save(KhachHang p)
         {
             context.khachhangs.Add(p);
+            return context.SaveChanges();
+        }
+
+        public int Delete(string idxoa)
+        {
+            var p = new KhachHang();
+            p = context.khachhangs.First(x => x.id_KhachHang.Equals(idxoa));
+            context.khachhangs.Remove(p);
             return context.SaveChanges();
         }
 

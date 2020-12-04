@@ -53,10 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DVDBUL.cs" />
     <Compile Include="KhachHangBUL.cs" />
+    <Compile Include="PhieuDatTruocBUL.cs" />
     <Compile Include="PhieuThueTraBUL.cs" />
     <Compile Include="PhiTreHenBUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TheLoaiBUL.cs" />
+    <Compile Include="TieuDeBUL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

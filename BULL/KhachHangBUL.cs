@@ -52,6 +52,12 @@ namespace BULL
             return 1;
         }
 
+        public int Delete(string idxoa)
+        {
+            khdal.Delete(idxoa);
+            return 1;
+        }
+
         public eKhachHang GetKhachHangByID(int idkh)
         {
             eKhachHang kh = new eKhachHang();
@@ -62,6 +68,22 @@ namespace BULL
                 kh.soCMND = temp.soCMND;
                 kh.soDT = temp.soDT;
                 return kh;
+            }
+            return null;
+        }
+
+        public eKhachHang Find(int id)
+        {
+            KhachHang kh = khdal.Find(id);
+            if (kh != null)
+            {
+                eKhachHang e = new eKhachHang();
+                e.id_KhachHang = kh.id_KhachHang;
+                e.tenKhachHang = kh.tenKhachHang;
+                e.soDT = kh.soDT;
+                e.soCMND = kh.soCMND;
+
+                return e;
             }
             return null;
         }

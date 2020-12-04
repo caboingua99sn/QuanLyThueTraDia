@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_ten = new System.Windows.Forms.TextBox();
-            this.txt_dc = new System.Windows.Forms.TextBox();
-            this.txt_sdt = new System.Windows.Forms.TextBox();
             this.btn_dk = new System.Windows.Forms.Button();
+            this.txt_sdt = new System.Windows.Forms.TextBox();
+            this.txt_dc = new System.Windows.Forms.TextBox();
+            this.txt_ten = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,25 +55,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đăng ký thành viên";
             // 
-            // label1
+            // btn_dk
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Họ Và Tên:";
+            this.btn_dk.Location = new System.Drawing.Point(6, 140);
+            this.btn_dk.Name = "btn_dk";
+            this.btn_dk.Size = new System.Drawing.Size(310, 33);
+            this.btn_dk.TabIndex = 1;
+            this.btn_dk.Text = "ĐĂNG KÝ";
+            this.btn_dk.UseVisualStyleBackColor = true;
+            this.btn_dk.Click += new System.EventHandler(this.btn_dk_Click);
             // 
-            // label2
+            // txt_sdt
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Địa Chỉ";
+            this.txt_sdt.Location = new System.Drawing.Point(106, 99);
+            this.txt_sdt.Name = "txt_sdt";
+            this.txt_sdt.Size = new System.Drawing.Size(210, 20);
+            this.txt_sdt.TabIndex = 4;
+            // 
+            // txt_dc
+            // 
+            this.txt_dc.Location = new System.Drawing.Point(106, 65);
+            this.txt_dc.Name = "txt_dc";
+            this.txt_dc.Size = new System.Drawing.Size(210, 20);
+            this.txt_dc.TabIndex = 3;
+            // 
+            // txt_ten
+            // 
+            this.txt_ten.Location = new System.Drawing.Point(106, 31);
+            this.txt_ten.Name = "txt_ten";
+            this.txt_ten.Size = new System.Drawing.Size(210, 20);
+            this.txt_ten.TabIndex = 1;
             // 
             // label3
             // 
@@ -85,36 +96,25 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "SDT:";
             // 
-            // txt_ten
+            // label2
             // 
-            this.txt_ten.Location = new System.Drawing.Point(106, 31);
-            this.txt_ten.Name = "txt_ten";
-            this.txt_ten.Size = new System.Drawing.Size(210, 20);
-            this.txt_ten.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Địa Chỉ";
             // 
-            // txt_dc
+            // label1
             // 
-            this.txt_dc.Location = new System.Drawing.Point(106, 65);
-            this.txt_dc.Name = "txt_dc";
-            this.txt_dc.Size = new System.Drawing.Size(210, 20);
-            this.txt_dc.TabIndex = 3;
-            // 
-            // txt_sdt
-            // 
-            this.txt_sdt.Location = new System.Drawing.Point(106, 99);
-            this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(210, 20);
-            this.txt_sdt.TabIndex = 4;
-            // 
-            // btn_dk
-            // 
-            this.btn_dk.Location = new System.Drawing.Point(6, 140);
-            this.btn_dk.Name = "btn_dk";
-            this.btn_dk.Size = new System.Drawing.Size(310, 33);
-            this.btn_dk.TabIndex = 1;
-            this.btn_dk.Text = "ĐĂNG KÝ";
-            this.btn_dk.UseVisualStyleBackColor = true;
-            this.btn_dk.Click += new System.EventHandler(this.btn_dk_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Họ Và Tên:";
             // 
             // DangKyTV
             // 
@@ -123,6 +123,7 @@
             this.ClientSize = new System.Drawing.Size(346, 204);
             this.Controls.Add(this.groupBox1);
             this.Name = "DangKyTV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangKyTV";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -18,13 +18,12 @@ namespace DAL
              return context.phieuthuetras.Where(x => x.id_KhachHang == idKH && x.ngayTra == null).ToList();
         }
 
-        public int AddPhieuThue(int id_dvd, int id_kh)
+        public int AddPhieuThue(int id_dvd, int id_kh, DateTime now)
         {
             PhieuThueTra p = new PhieuThueTra();
             p.id_DVD = id_dvd;
             p.id_KhachHang = id_kh;
-            p.ngayThue = DateTime.Now;
-            p.phiTreHan = 0;
+            p.ngayThue = now;
             context.phieuthuetras.Add(p);
             return context.SaveChanges();
         }

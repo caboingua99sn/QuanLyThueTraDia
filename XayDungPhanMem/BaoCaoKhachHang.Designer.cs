@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_listkh = new System.Windows.Forms.ComboBox();
             this.dgv_dskh = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txt_idkh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_phino = new System.Windows.Forms.TextBox();
@@ -43,9 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_dsdiathue = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cb_listkh = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dskh)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -64,6 +64,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách khách hàng";
+            // 
+            // cb_listkh
+            // 
+            this.cb_listkh.FormattingEnabled = true;
+            this.cb_listkh.Location = new System.Drawing.Point(148, 0);
+            this.cb_listkh.Name = "cb_listkh";
+            this.cb_listkh.Size = new System.Drawing.Size(121, 23);
+            this.cb_listkh.TabIndex = 2;
+            this.cb_listkh.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dgv_dskh
             // 
@@ -94,6 +103,24 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách hàng";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(123, 189);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(199, 22);
+            this.textBox1.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(38, 192);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 15);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Tổng đĩa thuê:";
             // 
             // txt_idkh
             // 
@@ -204,33 +231,6 @@
             this.dgv_dsdiathue.Size = new System.Drawing.Size(372, 159);
             this.dgv_dsdiathue.TabIndex = 0;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(123, 189);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(199, 22);
-            this.textBox1.TabIndex = 20;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 192);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 15);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Tổng đĩa thuê:";
-            // 
-            // cb_listkh
-            // 
-            this.cb_listkh.FormattingEnabled = true;
-            this.cb_listkh.Location = new System.Drawing.Point(148, 0);
-            this.cb_listkh.Name = "cb_listkh";
-            this.cb_listkh.Size = new System.Drawing.Size(121, 23);
-            this.cb_listkh.TabIndex = 2;
-            this.cb_listkh.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // BaoCaoKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +240,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "BaoCaoKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BaoCaoKhachHang";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dskh)).EndInit();
