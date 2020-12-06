@@ -29,24 +29,34 @@ namespace XayDungPhanMem
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtSL.Text != "")
+            string user = Properties.Settings.Default.useName;
+            string pass = Properties.Settings.Default.passWord;
+            if (user.Equals("Empty") && pass.Equals("Empty"))
             {
-                List<eTieuDe> list = new List<eTieuDe>();
-                list = tdbul.getTieuDes();
-                eTieuDe etd = new eTieuDe();
-                etd = list.FirstOrDefault(a => a.tenTieuDe == cbbTieuDe.Text);
-                eDVD dVD = new eDVD();
-                dVD.id_TieuDe = etd.id_TieuDe;
-                dVD.trangThai = -1; //onshelf
-                for (int i = 0; i < Convert.ToInt32(txtSL.Text.Trim()); i++)
-                {
-                    dvdbul.Save(dVD);
-                }
-                MessageBox.Show("Thêm thành công");
+                Login frm = new Login();
+                frm.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập số lượng");
+                if (txtSL.Text != "")
+                {
+                    List<eTieuDe> list = new List<eTieuDe>();
+                    list = tdbul.getTieuDes();
+                    eTieuDe etd = new eTieuDe();
+                    etd = list.FirstOrDefault(a => a.tenTieuDe == cbbTieuDe.Text);
+                    eDVD dVD = new eDVD();
+                    dVD.id_TieuDe = etd.id_TieuDe;
+                    dVD.trangThai = -1; //onshelf
+                    for (int i = 0; i < Convert.ToInt32(txtSL.Text.Trim()); i++)
+                    {
+                        dvdbul.Save(dVD);
+                    }
+                    MessageBox.Show("Thêm thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng");
+                }
             }
         }
 

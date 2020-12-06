@@ -87,16 +87,31 @@ namespace XayDungPhanMem
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (dgv_dsdia.SelectedRows.Count > 0)
+            string user = Properties.Settings.Default.useName;
+            string pass = Properties.Settings.Default.passWord;
+            if (user.Equals("Empty") && pass.Equals("Empty"))
             {
-                int id = Convert.ToInt32(txt_iddia.Text);
-                dVDBUL.DeleteDVD(id);
-                LoadData();
-                MessageBox.Show("Xóa thành công");
+                Login frm = new Login();
+                frm.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn đĩa bạn muốn xóa");
+                if (dgv_dsdia.SelectedRows.Count > 0)
+                {
+                    int id = Convert.ToInt32(txt_iddia.Text);
+                    if (dVDBUL.FindDVDById(id).trangThai != -1)
+                    {
+                        MessageBox.Show("Không thể xoá đĩa. Do đĩa đó đang được cho thuê hoặc đặt trước");
+                        return;
+                    }
+                    dVDBUL.DeleteDVD(id);
+                    LoadData();
+                    MessageBox.Show("Xóa thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn đĩa bạn muốn xóa");
+                }
             }
         }
 

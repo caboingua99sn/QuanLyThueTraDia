@@ -23,7 +23,6 @@ namespace XayDungPhanMem
         private void QuanLyKhachHang_Load(object sender, EventArgs e)
         {
             loadDataGridView(dgv_dskh);
-          
         }
         void loadDataGridView(DataGridView d)
         {
@@ -61,7 +60,22 @@ namespace XayDungPhanMem
 
         private void gdv_ds_dia_dang_thue(int idkh)
         {
-            dgv_dsdiathue.DataSource = thuebul.getPhieuThueTraByKH(idkh);
+            List<ePhieuThueTra> list = thuebul.getPhieuThueTraByKH(idkh);
+            DataTable table = new DataTable();
+            table.Columns.Add("id_PhieuThue", typeof(int));
+            table.Columns.Add("id_DVD", typeof(int));
+            table.Columns.Add("ngayThue", typeof(string));
+            foreach (ePhieuThueTra item in list)
+            {
+                table.Rows.Add(item.id_PhieuThue, item.id_DVD, item.ngayThue);
+            }
+            dgv_dsdiathue.DataSource = table;
+            dgv_dsdiathue.Columns["id_PhieuThue"].HeaderText = "Mã phiếu";
+            dgv_dsdiathue.Columns["id_DVD"].HeaderText = "Mã DVD";
+            dgv_dsdiathue.Columns["ngayThue"].HeaderText = "Ngày thuê";
+            dgv_dsdiathue.Columns["id_PhieuThue"].Width = 110;
+            dgv_dsdiathue.Columns["id_DVD"].Width = 110;
+            dgv_dsdiathue.Columns["ngayThue"].Width = 200;
         }
 
         private void btn_them_Click(object sender, EventArgs e)
@@ -97,6 +111,34 @@ namespace XayDungPhanMem
                 loadDataGridView(dgv_dskh);
             }
             else return;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string user = Properties.Settings.Default.useName;
+            string pass = Properties.Settings.Default.passWord;
+            if (user.Equals("Empty") && pass.Equals("Empty"))
+            {
+                Login frm = new Login();
+                frm.Show();
+            }
+            else
+            {
+                int vt = dgv_dskh.CurrentCell.RowIndex;
+                string id_KhachHang = dgv_dskh.Rows[vt].Cells["id_KhachHang"].Value.ToString();
+                if (id_KhachHang.Equals(""))
+                {
+                    MessageBox.Show("Hãy chọn khách hàng cần xoá");
+                    return;
+                }
+                int kq = khbul.Delete(Convert.ToInt32(id_KhachHang));
+                if (kq == 1)
+                {
+                    MessageBox.Show("Xoá khách hàng thành công");
+                    loadDataGridView(dgv_dskh);
+                    return;
+                }
+            }
         }
     }
 }

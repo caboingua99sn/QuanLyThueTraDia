@@ -67,6 +67,7 @@ namespace BULL
             pdtdal.Save(pdt);
 
         }
+
         public List<eKhachHang> FindKhachHangById(int id)
         {
             List<KhachHang> lst = pdtdal.FindKhachHangById(id);
@@ -80,7 +81,6 @@ namespace BULL
                 e.soCMND = item.soCMND;
                 e.soDT = item.soDT;
                 lit.Add(e);
-
             }
             return lit;
         }

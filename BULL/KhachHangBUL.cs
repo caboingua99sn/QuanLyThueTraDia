@@ -52,7 +52,7 @@ namespace BULL
             return 1;
         }
 
-        public int Delete(string idxoa)
+        public int Delete(int idxoa)
         {
             khdal.Delete(idxoa);
             return 1;
@@ -64,6 +64,7 @@ namespace BULL
             KhachHang temp = khdal.Find(idkh);
             if (temp != null)
             {
+                kh.id_KhachHang = temp.id_KhachHang;
                 kh.tenKhachHang = temp.tenKhachHang;
                 kh.soCMND = temp.soCMND;
                 kh.soDT = temp.soDT;

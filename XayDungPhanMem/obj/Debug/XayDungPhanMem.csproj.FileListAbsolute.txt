@@ -85,3 +85,4 @@ C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanM
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.frmQuanlydia.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.ThemDVD.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.ChiTietTreHan.resources
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\XayDungPhanMem\obj\Debug\XayDungPhanMem.Login.resources

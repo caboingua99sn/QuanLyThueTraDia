@@ -124,13 +124,75 @@ namespace XayDungPhanMem
             bool check = CheckExistForm("TraDia");
             if (!check)
             {
-                TraDia f = new TraDia();
+                TraDia f = new TraDia(this);
                 f.MdiParent = this;
                 f.Show();
             }
             else
             {
                 ActiveChildForm("TraDia");
+            }
+        }
+
+        private void phitrehen_Click(object sender, EventArgs e)
+        {
+            bool check = CheckExistForm("ChiTietTreHan");
+            if (!check)
+            {
+                ChiTietTreHan f = new ChiTietTreHan();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActiveChildForm("ChiTietTreHan");
+            }
+        }
+
+        private void dangxuat_Click(object sender, EventArgs e)
+        {
+            string user = Properties.Settings.Default.useName;
+            string pass = Properties.Settings.Default.passWord;
+            if (user.Equals("Empty") && pass.Equals("Empty"))
+            {
+                MessageBox.Show("Tài khoản đã được đăng xuất");
+                return;
+            }
+            else
+            {
+                Properties.Settings.Default.Reset();
+                MessageBox.Show("Đăng xuất thành công");
+                return;
+            }
+        }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Reset();
+        }
+
+        private void huyphitrehen_Click(object sender, EventArgs e)
+        {
+            string user = Properties.Settings.Default.useName;
+            string pass = Properties.Settings.Default.passWord;
+            if (user.Equals("Empty") && pass.Equals("Empty"))
+            {
+                Login frm = new Login();
+                frm.ShowDialog();
+            }
+            else
+            {
+                bool check = CheckExistForm("ChiTietTreHan");
+                if (!check)
+                {
+                    ChiTietTreHan f = new ChiTietTreHan();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+                else
+                {
+                    ActiveChildForm("ChiTietTreHan");
+                }
             }
         }
     }

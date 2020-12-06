@@ -116,11 +116,12 @@ namespace XayDungPhanMem
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Không tồn tài khách hàng. Bạn có muốn thêm khách hàng?", "Thông báo", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Không tồn tài khách hàng. " +
+                    "Bạn có muốn thêm khách hàng?", "Thông báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     QuanLyKhachHang frm = new QuanLyKhachHang();    // xử lí sau
-                    frm.Show();
+                    frm.ShowDialog();
                 }
             }
         }
@@ -390,7 +391,8 @@ namespace XayDungPhanMem
                 phieu.ngayThue = Convert.ToDateTime(row.Cells[2].Value.ToString());
                 phieu.ngayTra = Convert.ToDateTime(row.Cells[3].Value.ToString());
                 phieu.phiTreHan = PHI_TRE_HEN;
-                double phi = Convert.ToDouble(phieu.phiTreHan) * Convert.ToDouble(tlbus.GetTheLoaiByID(tieuDeBUL.Find(dVDBUL.FindDVDById(phieu.id_DVD).id_TieuDe).id_TheLoai).giaThue);
+                double phi = Convert.ToDouble(phieu.phiTreHan) * Convert.ToDouble(tlbus.GetTheLoaiByID(
+                    tieuDeBUL.Find(dVDBUL.FindDVDById(phieu.id_DVD).id_TieuDe).id_TheLoai).giaThue);
                 phiTreHen -= phi;
                 tongPhi = phiTreHen + phiThue;
                 foreach (ePhieuThueTra item in listPhieuPhiTreHenSau)

@@ -34,17 +34,18 @@
             this.quanlykhachhang = new System.Windows.Forms.ToolStripMenuItem();
             this.quanlydia = new System.Windows.Forms.ToolStripMenuItem();
             this.quanlytieude = new System.Windows.Forms.ToolStripMenuItem();
-            this.qUẢNLÝĐẶTCHỔToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hOẠTĐỘNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thue = new System.Windows.Forms.ToolStripMenuItem();
             this.tradia = new System.Windows.Forms.ToolStripMenuItem();
             this.đẶTTRƯỚCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đĂNGKÝKHÁCHHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phitrehen = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁOCÁOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁOCÁOKHÁCHHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁOCÁOĐĨAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁOCÁOTIÊUĐỀToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dangxuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.huyphitrehen = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnToolStripMenuItem,
             this.hOẠTĐỘNGToolStripMenuItem,
-            this.bÁOCÁOToolStripMenuItem});
+            this.bÁOCÁOToolStripMenuItem,
+            this.dangxuat});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1411, 24);
@@ -65,8 +67,7 @@
             this.quảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quanlykhachhang,
             this.quanlydia,
-            this.quanlytieude,
-            this.qUẢNLÝĐẶTCHỔToolStripMenuItem});
+            this.quanlytieude});
             this.quảnToolStripMenuItem.Name = "quảnToolStripMenuItem";
             this.quảnToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.quảnToolStripMenuItem.Text = "QUẢN LÝ";
@@ -92,19 +93,14 @@
             this.quanlytieude.Text = "QUẢN LÝ TIÊU ĐỀ";
             this.quanlytieude.Click += new System.EventHandler(this.quanlytieude_Click);
             // 
-            // qUẢNLÝĐẶTCHỔToolStripMenuItem
-            // 
-            this.qUẢNLÝĐẶTCHỔToolStripMenuItem.Name = "qUẢNLÝĐẶTCHỔToolStripMenuItem";
-            this.qUẢNLÝĐẶTCHỔToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.qUẢNLÝĐẶTCHỔToolStripMenuItem.Text = "QUẢN LÝ ĐẶT CHỔ";
-            // 
             // hOẠTĐỘNGToolStripMenuItem
             // 
             this.hOẠTĐỘNGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thue,
             this.tradia,
             this.đẶTTRƯỚCToolStripMenuItem,
-            this.đĂNGKÝKHÁCHHÀNGToolStripMenuItem});
+            this.phitrehen,
+            this.huyphitrehen});
             this.hOẠTĐỘNGToolStripMenuItem.Name = "hOẠTĐỘNGToolStripMenuItem";
             this.hOẠTĐỘNGToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.hOẠTĐỘNGToolStripMenuItem.Text = "HOẠT ĐỘNG";
@@ -112,29 +108,30 @@
             // thue
             // 
             this.thue.Name = "thue";
-            this.thue.Size = new System.Drawing.Size(205, 22);
+            this.thue.Size = new System.Drawing.Size(220, 22);
             this.thue.Text = "THUÊ ĐĨA";
             this.thue.Click += new System.EventHandler(this.thue_Click);
             // 
             // tradia
             // 
             this.tradia.Name = "tradia";
-            this.tradia.Size = new System.Drawing.Size(205, 22);
+            this.tradia.Size = new System.Drawing.Size(220, 22);
             this.tradia.Text = "TRẢ ĐĨA";
             this.tradia.Click += new System.EventHandler(this.tradia_Click);
             // 
             // đẶTTRƯỚCToolStripMenuItem
             // 
             this.đẶTTRƯỚCToolStripMenuItem.Name = "đẶTTRƯỚCToolStripMenuItem";
-            this.đẶTTRƯỚCToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.đẶTTRƯỚCToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.đẶTTRƯỚCToolStripMenuItem.Text = "ĐẶT TRƯỚC";
             this.đẶTTRƯỚCToolStripMenuItem.Click += new System.EventHandler(this.DatTruoc);
             // 
-            // đĂNGKÝKHÁCHHÀNGToolStripMenuItem
+            // phitrehen
             // 
-            this.đĂNGKÝKHÁCHHÀNGToolStripMenuItem.Name = "đĂNGKÝKHÁCHHÀNGToolStripMenuItem";
-            this.đĂNGKÝKHÁCHHÀNGToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.đĂNGKÝKHÁCHHÀNGToolStripMenuItem.Text = "ĐĂNG KÝ KHÁCH HÀNG";
+            this.phitrehen.Name = "phitrehen";
+            this.phitrehen.Size = new System.Drawing.Size(220, 22);
+            this.phitrehen.Text = "THANH TOÁN PHÍ TRỄ HẸN";
+            this.phitrehen.Click += new System.EventHandler(this.phitrehen_Click);
             // 
             // bÁOCÁOToolStripMenuItem
             // 
@@ -169,6 +166,20 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // dangxuat
+            // 
+            this.dangxuat.Name = "dangxuat";
+            this.dangxuat.Size = new System.Drawing.Size(84, 20);
+            this.dangxuat.Text = "ĐĂNG XUẤT";
+            this.dangxuat.Click += new System.EventHandler(this.dangxuat_Click);
+            // 
+            // huyphitrehen
+            // 
+            this.huyphitrehen.Name = "huyphitrehen";
+            this.huyphitrehen.Size = new System.Drawing.Size(220, 22);
+            this.huyphitrehen.Text = "HUỶ PHÍ TRỄ HẸN";
+            this.huyphitrehen.Click += new System.EventHandler(this.huyphitrehen_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +191,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -195,15 +207,16 @@
         private System.Windows.Forms.ToolStripMenuItem quanlykhachhang;
         private System.Windows.Forms.ToolStripMenuItem quanlydia;
         private System.Windows.Forms.ToolStripMenuItem quanlytieude;
-        private System.Windows.Forms.ToolStripMenuItem qUẢNLÝĐẶTCHỔToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hOẠTĐỘNGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thue;
         private System.Windows.Forms.ToolStripMenuItem tradia;
         private System.Windows.Forms.ToolStripMenuItem đẶTTRƯỚCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đĂNGKÝKHÁCHHÀNGToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phitrehen;
         private System.Windows.Forms.ToolStripMenuItem bÁOCÁOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bÁOCÁOKHÁCHHÀNGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bÁOCÁOĐĨAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bÁOCÁOTIÊUĐỀToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dangxuat;
+        private System.Windows.Forms.ToolStripMenuItem huyphitrehen;
     }
 }

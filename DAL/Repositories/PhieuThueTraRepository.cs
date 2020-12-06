@@ -15,7 +15,13 @@ namespace DAL
 
         public List<PhieuThueTra> getPhieuThueTraByKH(int idKH)
         {
-             return context.phieuthuetras.Where(x => x.id_KhachHang == idKH && x.ngayTra == null).ToList();
+            var list = context.phieuthuetras.Where(x => x.id_KhachHang == idKH && x.ngayTra == null).ToList();
+             return list;
+        }
+
+        public PhieuThueTra getPhieuThueTraByIdDVD(int id_dvd)
+        {
+            return context.phieuthuetras.Where(x => x.id_DVD == id_dvd && x.ngayTra == null).FirstOrDefault();
         }
 
         public int AddPhieuThue(int id_dvd, int id_kh, DateTime now)
@@ -25,6 +31,23 @@ namespace DAL
             p.id_KhachHang = id_kh;
             p.ngayThue = now;
             context.phieuthuetras.Add(p);
+            return context.SaveChanges();
+        }
+
+        public int UpdatePhieuThue(int id_phieu, DateTime now, DateTime ngayTreHen, double phiTrehen)
+        {
+            PhieuThueTra phieu = context.phieuthuetras.Where(x => x.id_PhieuThue == id_phieu).FirstOrDefault();
+            phieu.ngayTra = now;
+            phieu.ngayTraPhiTreHen = ngayTreHen;
+            phieu.phiTreHan = phiTrehen;
+            return context.SaveChanges();
+        }
+
+        public int UpdatePhieuThue_Tre(int id_phieu, DateTime now, double phiTrehen)
+        {
+            PhieuThueTra phieu = context.phieuthuetras.Where(x => x.id_PhieuThue == id_phieu).FirstOrDefault();
+            phieu.ngayTra = now;
+            phieu.phiTreHan = phiTrehen;
             return context.SaveChanges();
         }
 

@@ -24,10 +24,10 @@ namespace DAL.Repositories
             return context.SaveChanges();
         }
 
-        public int Delete(string idxoa)
+        public int Delete(int idxoa)
         {
             var p = new KhachHang();
-            p = context.khachhangs.First(x => x.id_KhachHang.Equals(idxoa));
+            p = context.khachhangs.First(x => x.id_KhachHang == idxoa);
             context.khachhangs.Remove(p);
             return context.SaveChanges();
         }

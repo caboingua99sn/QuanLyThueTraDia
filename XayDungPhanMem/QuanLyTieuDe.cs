@@ -140,13 +140,23 @@ namespace XayDungPhanMem
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (!txt_id.Text.Equals(""))
+            string user = Properties.Settings.Default.useName;
+            string pass = Properties.Settings.Default.passWord;
+            if (user.Equals("Empty") && pass.Equals("Empty"))
             {
-                if (tdbul.Delete(Convert.ToInt32(txt_id.Text)) == 1)
-                    MessageBox.Show("Xoa Thanh Cong");
-                else MessageBox.Show("Xoa That Bai");
+                Login frm = new Login();
+                frm.ShowDialog();
             }
-            else MessageBox.Show("Chua chon tieu de can xoa");
+            else
+            {
+                if (!txt_id.Text.Equals(""))
+                {
+                    if (tdbul.Delete(Convert.ToInt32(txt_id.Text)) == 1)
+                        MessageBox.Show("Xoá thành công");
+                    else MessageBox.Show("Xoá thất bại");
+                }
+                else MessageBox.Show("Chưa chọn tiêu đề cần xoá");
+            }
         }
     }
 }
