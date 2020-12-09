@@ -60,3 +60,4 @@ C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\DAL\bin\Debug\Entity.pdb
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\DAL\bin\Debug\Entity.dll.config
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\DAL\obj\Debug\DAL.Migrations.v1.resources
 C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\ThanhQuy\Desktop\QuanLyThueTraDia\DAL\obj\Debug\DAL.Migrations.v2.resources

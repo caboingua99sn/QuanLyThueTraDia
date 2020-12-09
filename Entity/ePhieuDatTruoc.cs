@@ -13,5 +13,6 @@ namespace Entity
         public int id_KhachHang { get; set; }
         public int id_TieuDe { get; set; }
         public int? id_DVD { get; set; }
+        public int trangThai { get; set; }
     }
 }

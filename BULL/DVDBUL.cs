@@ -72,6 +72,20 @@ namespace BULL
             dvddal.Save(item);
         }
 
+        public eDVD getDVDOnShelf(int id_tieude)
+        {
+            DVD item = dvddal.getDVDOnShelf(id_tieude);
+            if (item != null)
+            {
+                eDVD tam = new eDVD();
+                tam.id_DVD = item.id_DVD;
+                tam.trangThai = item.trangThai;
+                tam.id_TieuDe = item.id_TieuDe;
+                return tam;
+            }
+            return null;
+        }
+
         public int DeleteDVD(int id)
         {
             dvddal.DeleteDVD(id);

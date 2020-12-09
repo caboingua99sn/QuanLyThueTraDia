@@ -15,7 +15,7 @@ namespace DAL.CodeFirst
         public DateTime ngayDatTruoc { get; set; }
 
         //foreign key
-       
+
         [Column(Order = 1)]
         public virtual int id_KhachHang { get; set; }
 
@@ -26,5 +26,7 @@ namespace DAL.CodeFirst
 
         [Column(Order = 3)]
         public virtual int? id_DVD { get; set; }
+
+        public int trangThai { get; set; }
     }
 }

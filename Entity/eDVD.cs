@@ -12,5 +12,10 @@ namespace Entity
         public int trangThai { get; set; }
         public int id_TieuDe { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            return obj is eDVD dVD &&
+                   id_TieuDe == dVD.id_TieuDe;
+        }
     }
 }

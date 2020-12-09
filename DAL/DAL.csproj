@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202012031221231_v1.designer.cs">
       <DependentUpon>202012031221231_v1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012061104174_v2.cs" />
+    <Compile Include="Migrations\202012061104174_v2.designer.cs">
+      <DependentUpon>202012061104174_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\DVDRepository.cs" />
     <Compile Include="Repositories\PhieuDatTruocRepository.cs" />
@@ -90,6 +94,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012031221231_v1.resx">
       <DependentUpon>202012031221231_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012061104174_v2.resx">
+      <DependentUpon>202012061104174_v2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

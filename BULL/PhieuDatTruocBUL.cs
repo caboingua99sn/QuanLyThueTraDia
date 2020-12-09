@@ -16,6 +16,7 @@ namespace BULL
         {
             pdtdal = new PhieuDatTruocRepository();
         }
+
         public List<ePhieuDatTruoc> getPhieuDatTruocs()
         {
             List<ePhieuDatTruoc> list = new List<ePhieuDatTruoc>();
@@ -32,6 +33,46 @@ namespace BULL
             }
             return list;
         }
+
+        public List<ePhieuDatTruoc> GetPhieuDatTruocsByDvdNull()
+        {
+            List<ePhieuDatTruoc> list = new List<ePhieuDatTruoc>();
+            foreach (var item in pdtdal.getPhieuDatTruocs())
+            {
+                ePhieuDatTruoc tam = new ePhieuDatTruoc();
+                tam.id_TieuDe = item.id_TieuDe;
+                tam.id_PhieuDatTruoc = item.id_PhieuDatTruoc;
+                tam.id_KhachHang = item.id_KhachHang;
+                tam.ngayDatTruoc = item.ngayDatTruoc;
+
+                list.Add(tam);
+            }
+            return list;
+        }
+
+        public int Update(int id_phieu, int id_dvd)
+        {
+            return pdtdal.Update(id_phieu, id_dvd);
+        }
+
+        public int DeletePDTByIDPhieu_IDTieuDe(int idphieu)
+        {
+            return pdtdal.DeletePDTByIDPhieu_IDTieuDe(idphieu);
+        }
+
+        public ePhieuDatTruoc GetPhieuDatTruocByID(int id_dvd)
+        {
+            PhieuDatTruoc phieu = pdtdal.GetPhieuDatTruocByID(id_dvd);
+            ePhieuDatTruoc tam = new ePhieuDatTruoc();
+            tam.id_DVD = phieu.id_DVD;
+            tam.id_TieuDe = phieu.id_TieuDe;
+            tam.id_PhieuDatTruoc = phieu.id_PhieuDatTruoc;
+            tam.id_KhachHang = phieu.id_KhachHang;
+            tam.ngayDatTruoc = phieu.ngayDatTruoc;
+            tam.trangThai = phieu.trangThai;
+            return tam;
+        }
+
         public eTieuDe FindTieuDeById(int id)
         {
             TieuDe d = pdtdal.FindTieuDeById(id);
@@ -42,6 +83,7 @@ namespace BULL
             return tam;
 
         }
+
         public eKhachHang FindKHBYID(int id)
         {
             KhachHang kh = pdtdal.FindKHBYID(id);
@@ -50,11 +92,9 @@ namespace BULL
             tam.tenKhachHang = kh.tenKhachHang;
             tam.soCMND = kh.soCMND;
             tam.soDT = kh.soDT;
-
             return tam;
-
-
         }
+
         public void Save(ePhieuDatTruoc p)
         {
             PhieuDatTruoc pdt = new PhieuDatTruoc();
@@ -83,6 +123,12 @@ namespace BULL
                 lit.Add(e);
             }
             return lit;
+        }
+
+        public int DeletPDTByIdKH(int id)
+        {
+            pdtdal.DeletePDTByIDKH(id);
+            return 1;
         }
     }
 }

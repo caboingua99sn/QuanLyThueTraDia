@@ -26,7 +26,7 @@ namespace DAL.Repositories
 
         public List<DVD> getDVDsByTieuDe(int tieude)
         {
-            return context.dvds.Where(x => x.id_TieuDe == tieude).ToList();
+            return context.dvds.Where(x => x.id_TieuDe == tieude && x.trangThai == -1).ToList();
         }
 
         public int Save(DVD d)
@@ -53,6 +53,11 @@ namespace DAL.Repositories
             }
             return null;
 
+        }
+
+        public DVD getDVDOnShelf(int id_tieude)
+        {
+            return context.dvds.Where(x => x.trangThai == -1 && x.id_TieuDe == id_tieude).FirstOrDefault();
         }
 
         public int UpdateTrangThaiDVD(int id, int trangthai)

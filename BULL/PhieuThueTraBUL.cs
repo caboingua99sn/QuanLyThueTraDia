@@ -18,6 +18,24 @@ namespace BULL
             phieuThuTraDal = new PhieuThueTraRepository();
         }
 
+        public List<ePhieuThueTra> getPhieuThueTraByKHBaoCao(int id_KH)
+        {
+            List<ePhieuThueTra> list = new List<ePhieuThueTra>();
+            foreach (var phieu in phieuThuTraDal.getPhieuThueTraByKH(id_KH))
+            {
+                ePhieuThueTra item = new ePhieuThueTra();
+                item.id_KhachHang = phieu.id_KhachHang;
+                item.id_DVD = phieu.id_DVD;
+                item.id_PhieuThue = phieu.id_PhieuThue;
+                item.ngayThue = phieu.ngayThue;
+                item.ngayTra = phieu.ngayTra;
+                item.ngayTraPhiTreHen = phieu.ngayTraPhiTreHen;
+                item.phiTreHan = phieu.phiTreHan;
+                list.Add(item);
+            }
+            return list;
+        }
+
         public List<ePhieuThueTra> getPhieuThueTraByKH(int id_KH)
         {
             List<ePhieuThueTra> list = new List<ePhieuThueTra>();
@@ -63,6 +81,11 @@ namespace BULL
         public int UpdatePhieuThue_Tre(int id_phieu, DateTime now, double phiTrehen)
         {
             return phieuThuTraDal.UpdatePhieuThue_Tre(id_phieu, now, phiTrehen);
+        }
+
+        public double totalPhi(int id)
+        {
+            return phieuThuTraDal.total(id);
         }
     }
 }

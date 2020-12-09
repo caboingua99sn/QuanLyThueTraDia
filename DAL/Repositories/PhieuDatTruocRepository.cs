@@ -31,11 +31,30 @@ namespace DAL.Repositories
             return null;
 
         }
+
         public int Save(PhieuDatTruoc p)
         {
             context.phieudattruocs.Add(p);
             return context.SaveChanges();
         }
+
+        public int Update(int id_phieu, int id_dvd)
+        {
+            PhieuDatTruoc phieu = context.phieudattruocs.Where(x => x.id_PhieuDatTruoc == id_phieu).FirstOrDefault();
+            phieu.id_DVD = id_dvd;
+            return context.SaveChanges();
+        }
+
+        public PhieuDatTruoc GetPhieuDatTruocByID(int id)
+        {
+            return context.phieudattruocs.Where(x => x.id_DVD == id && x.trangThai == 0).FirstOrDefault();
+        }
+
+        public List<PhieuDatTruoc> GetPhieuDatTruocsByDvdNull()
+        {
+            return context.phieudattruocs.Where(x => x.id_DVD == null).ToList();
+        }
+
         public List<KhachHang> FindKhachHangById(int id)
         {
 
@@ -50,6 +69,7 @@ namespace DAL.Repositories
             return lstafter;
 
         }
+
         public KhachHang FindKHBYID(int id)
         {
             PhieuDatTruoc c = context.phieudattruocs.First(p => p.id_KhachHang == id);
@@ -59,7 +79,20 @@ namespace DAL.Repositories
                 return td;
             }
             return null;
+        }
 
+        public int DeletePDTByIDPhieu_IDTieuDe(int idphieu)
+        {
+            PhieuDatTruoc pdt = context.phieudattruocs.Where(x => x.id_PhieuDatTruoc == idphieu).FirstOrDefault();
+            context.phieudattruocs.Remove(pdt);
+            return context.SaveChanges();
+        }
+
+        public int DeletePDTByIDKH(int id)
+        {
+            PhieuDatTruoc pdt = context.phieudattruocs.FirstOrDefault(x => x.id_KhachHang == id);
+            context.phieudattruocs.Remove(pdt);
+            return context.SaveChanges();
         }
 
         protected virtual void Dispose(bool disposing)

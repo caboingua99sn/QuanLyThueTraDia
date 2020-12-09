@@ -423,5 +423,15 @@ namespace XayDungPhanMem
             txtPhiTre.Text = phiTreHen.ToString();
             txtTong.Text = tongPhi.ToString();
         }
+
+        private void txt_IDDia_TextChanged(object sender, EventArgs e)
+        {
+            txt_tendia.Clear();
+        }
+
+        private void txt_tendia_TextChanged(object sender, EventArgs e)
+        {
+            txt_IDDia.Clear();
+        }
     }
 }

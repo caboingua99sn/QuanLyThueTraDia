@@ -15,11 +15,13 @@ namespace XayDungPhanMem
 {
     public partial class frmDatTruoc : Form
     {
+        ContextMenuStrip contextMenu;
         TieuDeBUL tieuDeBUL;
         PhieuDatTruocBUL phieuDatTruocBUL;
         KhachHangBUL khachHangBUL;
         DVDBUL dVDBUL;
         int vitri = 0;
+        int vitrikh = 0;
         public frmDatTruoc()
         {
             tieuDeBUL = new TieuDeBUL();
@@ -29,31 +31,30 @@ namespace XayDungPhanMem
             InitializeComponent();
             dgv_dstieude.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_dskhdat.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            contextMenu = new ContextMenuStrip();
+            contextMenu.Width = 500;
+            contextMenu.Items.Add("Xóa", Image.FromFile(@"../../Image/xoa.JPG"), new EventHandler(Xoa_Click));
+            // contextMenu.Items.Add("Cập nhật", Image.FromFile(@"../../Image/Huy.JPG "), new EventHandler(CapNhat_Click));
+
+            this.ContextMenuStrip = contextMenu;
+
+
+        }
+
+        void Xoa_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.dgv_dskhdat.Rows[vitrikh];
+            int idkh = Convert.ToInt32(row.Cells[0].Value.ToString());
+            //ePhieuDatTruoc pdt = new ePhieuDatTruoc();
+            phieuDatTruocBUL.DeletPDTByIdKH(idkh);
+            MessageBox.Show("Đã hủy thành công !");
+
+
         }
 
         private void DatTruoc_Load(object sender, EventArgs e)
         {
-            //var lisptd = from td in tieuDeBUL.getTieuDes()
-            //             join pdt in phieuDatTruocBUL.getPhieuDatTruocs()
-            //             on td.id_TieuDe equals pdt.id_TieuDe
-            //             join dvd in dVDBUL.getDVDs()
-            //             on pdt.id_DVD equals dvd.id_DVD
-            //             where dvd.trangThai !=1      
-            //             select new
-            //             {
-            //                td.id_TieuDe,
-            //                td.tenTieuDe,
-            //                td.id_TheLoai
-            //             };
-            //List<eTieuDe> lst = new List<eTieuDe>();
-            //foreach(var item in lisptd)
-            //{
-            //    eTieuDe td = new eTieuDe();
-            //    td.id_TieuDe = item.id_TieuDe;
-            //    td.tenTieuDe = item.tenTieuDe;
-            //    td.id_TheLoai = item.id_TheLoai;
-            //    lst.Add(td);
-            //}
             dgv_dstieude.DataSource = tieuDeBUL.getTieuDes();
         }
 
@@ -127,6 +128,7 @@ namespace XayDungPhanMem
                 txt_idkh.Text = id.ToString();
                 txt_sdt.Text = kh.soDT;
                 txt_tenkh.Text = kh.tenKhachHang;
+                txtsocm.Text = kh.soCMND;
             }
 
         }
@@ -134,6 +136,7 @@ namespace XayDungPhanMem
         {
             txt_tenkh.Text = "";
             txt_sdt.Text = "";
+            txtsocm.Text = "";
         }
         private void btn_dat_Click(object sender, EventArgs e)
         {
@@ -144,32 +147,37 @@ namespace XayDungPhanMem
             int id = Convert.ToInt32(txt_idkh.Text);
 
             eKhachHang kh = khachHangBUL.Find(id);
-            if (kh == null)
+            if (kh != null)
             {
-                eKhachHang ekh = new eKhachHang();
-                ekh.tenKhachHang = txt_tenkh.Text;
-                ekh.soDT = txt_sdt.Text;
+                eDVD dvd = dVDBUL.getDVDOnShelf(s);
+                if (dvd != null)
+                {
+                    pdt.id_DVD = dvd.id_DVD;
+                    pdt.id_TieuDe = s;
+                    pdt.ngayDatTruoc = DateTime.Today;
+                    pdt.id_KhachHang = kh.id_KhachHang;
+                    pdt.trangThai = 0;
+                    phieuDatTruocBUL.Save(pdt);
+                    MessageBox.Show("Đặt trước thành công");
 
-                khachHangBUL.Save(ekh);
-                List<eKhachHang> lst = khachHangBUL.getKhachHangs();
-                eKhachHang khh = lst.FirstOrDefault(st => st.soCMND.Equals(ekh.soCMND));
-
-                pdt.id_TieuDe = s;
-                pdt.ngayDatTruoc = DateTime.Today;
-                pdt.id_KhachHang = khh.id_KhachHang;
-                phieuDatTruocBUL.Save(pdt);
-                MessageBox.Show("Đặt trước thành công");
+                    dVDBUL.UpdateTrangThaiDVD(dvd.id_DVD, 0);
+                }
+                else
+                {
+                    pdt.id_TieuDe = s;
+                    pdt.ngayDatTruoc = DateTime.Today;
+                    pdt.id_KhachHang = kh.id_KhachHang;
+                    pdt.trangThai = 0;
+                    phieuDatTruocBUL.Save(pdt);
+                    MessageBox.Show("Đặt trước thành công");
+                }
             }
             else
             {
-                pdt.id_TieuDe = s;
-                pdt.ngayDatTruoc = DateTime.Today;
-                pdt.id_KhachHang = kh.id_KhachHang;
-                phieuDatTruocBUL.Save(pdt);
-                MessageBox.Show("Đặt trước thành công");
+                MessageBox.Show("Không tìm thấy khách hàng");
+                return;
             }
-
-
+            dgv_dstieude.DataSource = tieuDeBUL.getTieuDes();
         }
 
         private void dgv_dskhdat_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -181,8 +189,54 @@ namespace XayDungPhanMem
                 //Đưa dữ liệu vào textbox
                 txt_idkh.Text = row.Cells[0].Value.ToString();
                 txt_tenkh.Text = row.Cells[1].Value.ToString();
+                txtsocm.Text = row.Cells[2].Value.ToString();
                 txt_sdt.Text = row.Cells[3].Value.ToString();
             }
+            vitrikh = e.RowIndex;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            List<eTieuDe> list = tieuDeBUL.getTieuDes();
+            List<eTieuDe> lit = new List<eTieuDe>();
+            foreach (var i in list)
+            {
+                if (txtTenTua.Text.Equals(i.tenTieuDe))
+                {
+                    //datagridviewrow row = this.dgv_dstieude.rows[0];
+                    ////đưa dữ liệu vào textbox
+                    //row.cells[0].value = i.id_tieude.tostring();
+                    //row.cells[1].value = i.tentieude;
+                    //row.cells[2].value = i.id_theloai;
+                    lit.Add(i);
+                    dgv_dstieude.DataSource = lit;
+
+                }
+
+            }
+
+        }
+
+        private void txtTenTua_TextChanged(object sender, EventArgs e)
+        {
+
+            List<string> list = new List<string>();
+            //List<eTieuDe> lst = tieuDeBUL.getTieuDes();
+            foreach (var i in tieuDeBUL.getTieuDes().Select(a => a.tenTieuDe))
+            {
+                list.Add(i);
+            }
+            txtTenTua.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtTenTua.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtTenTua.AutoCompleteCustomSource.AddRange(list.ToArray());
+        }
+
+        private void dgv_dskhdat_ContextMenuStripChanged(object sender, EventArgs e)
+        {
+            Button btnxoa = new Button();
+            Button btnhuy = new Button();
+
         }
     }
 }

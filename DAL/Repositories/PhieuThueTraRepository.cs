@@ -43,6 +43,20 @@ namespace DAL
             return context.SaveChanges();
         }
 
+        public double total(int id)
+        {
+            List<PhieuThueTra> ls = context.phieuthuetras.Where(x => x.id_KhachHang == id && x.ngayTra != null).ToList();
+            double s = 0;
+            foreach (var item in ls)
+            {
+                if (item.ngayTraPhiTreHen == null)
+                {
+                    s = (double)(s + item.phiTreHan);
+                }
+            }
+            return s;
+        }
+
         public int UpdatePhieuThue_Tre(int id_phieu, DateTime now, double phiTrehen)
         {
             PhieuThueTra phieu = context.phieuthuetras.Where(x => x.id_PhieuThue == id_phieu).FirstOrDefault();

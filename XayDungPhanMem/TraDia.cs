@@ -15,6 +15,7 @@ namespace XayDungPhanMem
     public partial class TraDia : Form
     {
         PhieuThueTraBUL phieuTTBul = new PhieuThueTraBUL();
+        PhieuDatTruocBUL phieuDatTruocBUL = new PhieuDatTruocBUL();
         const double PHI_TRE_HEN = 0.1;
         PhiTreHenBUL treHenBUL = new PhiTreHenBUL();
         KhachHangBUL khBul = new KhachHangBUL();
@@ -23,6 +24,7 @@ namespace XayDungPhanMem
         TheLoaiBUL theLoaiBUL = new TheLoaiBUL();
         DataTable table = new DataTable();
         List<eKhachHang> listKH;
+        List<eDVD> listDVD;
         Home home;
 
         public TraDia(Home h)
@@ -88,6 +90,7 @@ namespace XayDungPhanMem
         {
             DateTime now = DateTime.Now;
             listKH = new List<eKhachHang>();
+            listDVD = new List<eDVD>();
             int count = 0;
             foreach (DataGridViewRow row in dgvDsTra.Rows)
             {
@@ -95,6 +98,11 @@ namespace XayDungPhanMem
                 DateTime ngayThue = Convert.ToDateTime(row.Cells[2].Value.ToString());
                 int id_dvd = Convert.ToInt32(row.Cells[1].Value.ToString());
                 double time = theLoaiBUL.GetTheLoaiByID(tieuDeBUL.GetTieuDeByID(dvdBul.FindDVDById(id_dvd).id_TieuDe).id_TheLoai).thoiGianThue;
+                eDVD dvd = dvdBul.FindDVDById(id_dvd);
+                if (!listDVD.Contains(dvd))
+                {
+                    listDVD.Add(dvd);
+                }
                 eKhachHang kh = khBul.Find(Convert.ToInt32(row.Cells[3].Value.ToString()));
                 if (!listKH.Contains(kh))
                 {
@@ -108,6 +116,7 @@ namespace XayDungPhanMem
                 {
                     count = phieuTTBul.UpdatePhieuThue(id_phieu, now, now, 0);
                 }
+                dvdBul.UpdateTrangThaiDVD(id_dvd, -1);
             }
             if (count == 1)
             {
@@ -116,6 +125,36 @@ namespace XayDungPhanMem
                 LoadData();
             }
             CheckPhiTreHen();
+            UpdateDVDDatTruoc();
+        }
+
+        private void UpdateDVDDatTruoc()
+        {
+            List<ePhieuDatTruoc> list = phieuDatTruocBUL.getPhieuDatTruocs();
+            foreach (ePhieuDatTruoc item in list)
+            {
+                foreach (eDVD dVD in listDVD)
+                {
+                    if (item.id_TieuDe == dVD.id_TieuDe)
+                    {
+                        eKhachHang kh = khBul.Find(item.id_KhachHang);
+                        eTieuDe tieuDe = tieuDeBUL.Find(dVD.id_TieuDe);
+                        string text = "Khách hàng: " + kh.tenKhachHang + "\nSố điện thoại: " + kh.soDT + "\n Muốn tiếp tục giữ lại DVD có tiêu đề: "
+                                + tieuDe.tenTieuDe + "\n Hãy thông báo với khách hàng";
+                        DialogResult dialogResult = MessageBox.Show(text, "Thông báo", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            phieuDatTruocBUL.Update(item.id_PhieuDatTruoc, dVD.id_DVD);
+                            MessageBox.Show("Đã giữ DVD lại cho khách hàng");
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            phieuDatTruocBUL.DeletePDTByIDPhieu_IDTieuDe(item.id_PhieuDatTruoc);
+                            MessageBox.Show("Huỷ yêu cầu đặt trước dvd của khách hàng thành công");
+                        }
+                    }
+                }
+            }
         }
 
         private void CheckPhiTreHen()

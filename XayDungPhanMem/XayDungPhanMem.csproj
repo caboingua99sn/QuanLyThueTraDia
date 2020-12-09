@@ -63,6 +63,12 @@
     <Compile Include="BaoCaoKhachHang.Designer.cs">
       <DependentUpon>BaoCaoKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCaoTieuDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoTieuDe.Designer.cs">
+      <DependentUpon>BaoCaoTieuDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietTreHan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,8 +137,17 @@
     <Compile Include="TraDia.Designer.cs">
       <DependentUpon>TraDia.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrangThaiDVD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangThaiDVD.Designer.cs">
+      <DependentUpon>TrangThaiDVD.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaoCaoKhachHang.resx">
       <DependentUpon>BaoCaoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoTieuDe.resx">
+      <DependentUpon>BaoCaoTieuDe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChiTietTreHan.resx">
       <DependentUpon>ChiTietTreHan.cs</DependentUpon>
@@ -176,6 +191,9 @@
     <EmbeddedResource Include="TraDia.resx">
       <DependentUpon>TraDia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TrangThaiDVD.resx">
+      <DependentUpon>TrangThaiDVD.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -202,6 +220,10 @@
       <Project>{ef7c3603-63e1-417e-ae4e-ec7e9f359c78}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\Huy.JPG" />
+    <Content Include="Image\xoa.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

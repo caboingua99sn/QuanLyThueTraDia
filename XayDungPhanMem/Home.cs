@@ -195,5 +195,45 @@ namespace XayDungPhanMem
                 }
             }
         }
+
+        private void trangthaidvd_Click(object sender, EventArgs e)
+        {
+            TrangThaiDVD frm = new TrangThaiDVD();
+            frm.ShowDialog();
+        }
+
+        private void baocaokhachhang_Click(object sender, EventArgs e)
+        {
+            string user = Properties.Settings.Default.useName;
+            string pass = Properties.Settings.Default.passWord;
+            if (user.Equals("Empty") && pass.Equals("Empty"))
+            {
+                Login frm = new Login();
+                frm.Show();
+            }
+            else
+            {
+
+                BaoCaoKhachHang frm = new BaoCaoKhachHang();
+                frm.ShowDialog();
+            }
+        }
+
+        private void baocaotieude_Click(object sender, EventArgs e)
+        {
+            string user = Properties.Settings.Default.useName;
+            string pass = Properties.Settings.Default.passWord;
+            if (user.Equals("Empty") && pass.Equals("Empty"))
+            {
+                Login frm = new Login();
+                frm.Show();
+            }
+            else
+            {
+
+                BaoCaoTieuDe frm = new BaoCaoTieuDe();
+                frm.ShowDialog();
+            }
+        }
     }
 }
