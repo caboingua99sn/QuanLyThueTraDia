@@ -121,7 +121,7 @@ namespace XayDungPhanMem
                         eTheLoai theloai = tl.GetTheLoaiByID(t.id_TheLoai);
                         DateTime dt = (DateTime)item1.ngayThue;
                         DateTime today = DateTime.Now;
-                        if (item1.ngayTra == null && DateTime.Compare(today, dt) == 1)
+                        if (item1.ngayTra == null && DateTime.Compare(today,dt.AddDays(theloai.thoiGianThue)) == 1)
                         {
                             lskh1.Add(item);
                             break;
